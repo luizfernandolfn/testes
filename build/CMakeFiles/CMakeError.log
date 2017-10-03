@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2396142723/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2396142723.dir/build.make CMakeFiles/cmTryCompileExec2396142723.dir/build
+make[1]: Entrando no diretório `/home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2396142723.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2396142723.dir/CheckSymbolExists.c.o   -c /home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2396142723
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2396142723.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec2396142723.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2396142723 -rdynamic 
+CMakeFiles/cmTryCompileExec2396142723.dir/CheckSymbolExists.c.o: na função `main':
+CheckSymbolExists.c:(.text+0x16): referência indefinida para `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: ** [cmTryCompileExec2396142723] Erro 1
+make[1]: Saindo do diretório `/home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp'
+make: ** [cmTryCompileExec2396142723/fast] Erro 2
+
+File /home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec564872292/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec564872292.dir/build.make CMakeFiles/cmTryCompileExec564872292.dir/build
+make[1]: Entrando no diretório `/home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec564872292.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec564872292.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec564872292
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec564872292.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec564872292.dir/CheckFunctionExists.c.o  -o cmTryCompileExec564872292 -rdynamic -lpthreads 
+/usr/bin/ld: não foi possível encontrar -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: ** [cmTryCompileExec564872292] Erro 1
+make[1]: Saindo do diretório `/home/luiz/ros_ws/test_ws/build/CMakeFiles/CMakeTmp'
+make: ** [cmTryCompileExec564872292/fast] Erro 2
+
+
